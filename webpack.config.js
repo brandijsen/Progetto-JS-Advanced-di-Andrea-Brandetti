@@ -25,7 +25,12 @@ const config = {
         new HtmlWebpackPlugin({
             template: 'index.html',
         }),
-        new Dotenv()
+        new Dotenv({  path: './.env', // Path to .env file (this is the default)
+      safe: true, // load .env.example (defaults to "false" which does not use dotenv-safe)
+      systemvars: true // Load all system variables as well (useful for Netlify)
+      }
+            
+        )
 
         // Add your plugins here
         // Learn more about plugins from https://webpack.js.org/configuration/plugins/
