@@ -1,0 +1,167 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  /*
+  background-color: rgba(200, 200, 200, 0.959);*/
+  background-color: white;
+}
+
+/* header */
+
+header {
+  height: 500px; /* Altera questa altezza secondo le tue esigenze */
+  background-size: cover;
+  background-position: center;
+  position: relative;
+  color: white;
+  text-align: center;
+}
+
+h1 {
+  margin: 0;
+  padding: 20px;
+  font-size: 96px;
+  font-weight: 600;
+  /*
+  background-color: rgba(
+    0,
+    0,
+    0,
+    0.5
+  ); */ /* Sfondo semi-trasparente per il testo */
+}
+
+header p.description {
+  background-color: rgb(0, 0, 0, 0.5);
+  /* Sfondo semi-trargb(255, 255, 255)scrizione */
+  font-weight: 600;
+  color: white;
+  padding-top: 30px;
+
+  padding-bottom: 30px;
+  padding-left: 100px;
+  padding-right: 100px;
+  text-align: justify;
+  position: absolute; /* Posiziona assolutamente rispetto all'header */
+  bottom: 0; /* Posiziona in fondo */
+  left: 0;
+  right: 0;
+}
+
+/* images */
+
+#images-container {
+  display: flex;
+  justify-content: center;
+}
+
+img {
+  height: 100%;
+  width: 100%;
+  object-fit: cover; /* Mantiene il rapporto d'aspetto */
+}
+
+/* main section */
+
+.main {
+  margin-right: 200px;
+  margin-left: 200px;
+  margin-bottom: 30px;
+}
+
+h2 {
+  font-size: 28px;
+  margin: 20px 0;
+}
+
+.index {
+  font-weight: bold;
+  margin-bottom: 10px;
+}
+
+ul {
+  padding: 0;
+  margin-bottom: 20px;
+}
+
+li {
+  padding: 5px;
+  /*background-color: rgb(226, 226, 226);*/
+  transition: opacity 0.5s ease-in-out;
+  list-style: none;
+  align-items: center; /* Centra verticalmente */
+  margin-bottom: 20px;
+  border: 2px solid white;
+}
+
+li:hover {
+  border-left: 2px solid black;
+}
+
+a {
+  text-decoration: none;
+  font-weight: bold;
+}
+
+a:hover {
+  text-decoration: underline;
+}
+
+.news-author {
+  font-weight: 600;
+}
+/* button */
+
+.btn-container {
+  display: flex;
+  flex-direction: row;
+}
+
+button {
+  background-color: white; /* #4d4d4d;*/ /* rgb(180, 180, 180);*/
+  color: black;
+  margin: auto;
+  padding: 5px;
+  display: block;
+  cursor: pointer;
+  font-weight: bold;
+  font-family: "Roboto", sans-serif;
+  /*border-radius: 5px;*/
+  border: none;
+  font-size: 24px;
+  box-sizing: border-box;
+  border: 2px solid black;
+}
+button:hover {
+  color: red;
+  border: 2px solid red;
+}
+
+.more:hover {
+  color: blue;
+  border: 2px solid blue;
+}
+
+.less {
+  display: none;
+}
+
+/*footer*/
+
+footer {
+  display: flex;
+  /*background-color: rgb(80, 80, 80);*/
+  background-color: black;
+  color: white;
+  justify-content: center;
+  margin-top: 40px;
+  font-size: 22px;
+  padding-top: 30px;
+  padding-bottom: 30px;
+  font-weight: bold;
+}

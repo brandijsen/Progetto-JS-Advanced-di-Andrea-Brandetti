@@ -23,7 +23,8 @@ const config = {
     },
     plugins: [
         new HtmlWebpackPlugin({
-            template: 'index.html',
+            template: './src/index.html',
+            favicon: './src/assets/images/favicon-32x32.png'
         }),
         new Dotenv({  path: './.env', // Path to .env file (this is the default)
       safe: true, // load .env.example (defaults to "false" which does not use dotenv-safe)
@@ -47,7 +48,12 @@ const config = {
             },
             {
                 test: /\.(eot|svg|ttf|woff|woff2|png|jpg|gif)$/i,
-                type: 'asset',
+                use: {
+                    loader: 'img-optimize-loader',
+                    options: {
+                        compress: { mode: 'high' }
+                    }
+                }
             },
 
             // Add your rules for custom modules here
