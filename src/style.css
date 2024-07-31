@@ -203,9 +203,6 @@ footer {
 }
 
 @media only screen and (max-width: 430px) {
-  html {
-  }
-
   h1 {
     font-size: 2.5rem; /* 40px */
   }
