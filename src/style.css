@@ -204,7 +204,6 @@ footer {
 
 @media only screen and (max-width: 430px) {
   html {
-    font-size: 12px; /* Adjust base font size for smaller screens */
   }
 
   h1 {
