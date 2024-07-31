@@ -207,7 +207,7 @@ footer {
   }
 
   h1 {
-    font-size: 2rem; /* 32px */
+    font-size: 2.5rem; /* 40px */
   }
 
   p.description-full {
@@ -217,10 +217,26 @@ footer {
   p.description-short {
     display: block;
     padding: 0.625rem 1.25rem; /* 10px 20px */
-    font-size: 0.75rem; /* Further reduce font size */
+    font-size: 1.5rem; /* Further reduce font size */
   }
 
   .main {
     margin: 0 1.25rem 1.875rem; /* 20px 30px */
+  }
+
+  h2 {
+    font-size: 2rem;
+  }
+
+  .index {
+    font-size: 1rem;
+  }
+
+  li {
+    margin-bottom: 0.7rem;
+  }
+
+  footer {
+    font-size: 1.5rem;
   }
 }
