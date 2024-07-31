@@ -176,31 +176,35 @@ footer {
 }
 
 /* Media Queries for Responsiveness */
+/*
 @media (max-width: 1200px) {
   .main {
-    margin: 0 6.25rem 1.875rem; /* 100px 30px */
+    margin: 0 6.25rem 1.875rem;
   }
 }
+*/
 
+/*
 @media (min-width: 481px) and (max-width: 768px) {
   html {
-    font-size: 14px; /* Adjust base font size for smaller screens */
+    font-size: 14px;
   }
 
   h1 {
-    font-size: 2.5rem; /* 40px */
+    font-size: 2.5rem; 
   }
 
   p.description {
-    padding: 0.625rem 3.125rem; /* 10px 50px */
-    font-size: 0.875rem; /* Reduce font size */
+    padding: 0.625rem 3.125rem; 
+    font-size: 0.875rem; 
   }
 
   .main {
-    margin: 0 3.125rem 1.875rem; /* 50px 30px */
+    margin: 0 3.125rem 1.875rem;
     background-color: blue;
   }
 }
+*/
 
 @media only screen and (max-width: 430px) {
   h1 {
