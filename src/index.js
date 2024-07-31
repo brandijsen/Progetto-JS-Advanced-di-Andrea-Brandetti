@@ -1,27 +1,6 @@
 import axios from 'axios';
 import _ from 'lodash';
-import "./style.css"
-
-// Import images
-import alexandreDebieveImg from './assets/images/alexandre-debieve.jpg';
-import antoineBeauvillainImg from './assets/images/antoine-beauvillain.jpg';
-import nasaImg from './assets/images/nasa.jpg';
-import nasa2Img from './assets/images/nasa2.jpg';
-import markusSpiskeImg from './assets/images/markus-spiske.jpg';
-
-// Array of images for header background
-const images = [alexandreDebieveImg, antoineBeauvillainImg, markusSpiskeImg, nasa2Img, nasaImg];
-let currentIndex = 0;
-
-// Function to update the header background image
-const updateHeaderBackground = () => {
-  document.querySelector('header').style.backgroundImage = `url(${images[currentIndex]})`;
-  currentIndex = (currentIndex + 1) % images.length;
-};
-
-// Change header background image every 4 seconds
-setInterval(updateHeaderBackground, 4000);
-updateHeaderBackground();
+import "./style.css";
 
 // API options for fetching new stories
 const newStoriesOptions = {
@@ -34,7 +13,7 @@ const newStoriesOptions = {
 };
 
 // Function to fetch news details by ID
-const fetchNewsDetails = async (id) => {
+async function fetchNewsDetails(id) {
   try {
     const response = await axios.request({
       method: 'GET',
@@ -46,77 +25,80 @@ const fetchNewsDetails = async (id) => {
     console.error('Error fetching news details:', error);
     return null;
   }
-};
+}
 
 let currentIndexNews = 0;
 const newsPerPage = 10;
 let newsIds = [];
 
 // Function to fetch initial data (news IDs)
-const fetchData = async () => {
+async function fetchData() {
   try {
     const response = await axios.request(newStoriesOptions);
     newsIds = response.data;
-    loadNews();
+    loadNews(false);
   } catch (error) {
     console.error('Error fetching news:', error);
   }
-};
+}
 
 // Function to create a news item HTML
-const createNewsItem = (news) => {
+function createNewsItem(news, index) {
   if (!news) return '';
-  const { title = 'No title available', url = '#', by: author = 'Unknown author', time } = news;
+  const title = _.get(news, 'title', 'No title available');
+  const url = _.get(news, 'url', '#');
+  const author = _.get(news, 'by', 'Unknown author');
+  const time = _.get(news, 'time', 0);
   const date = new Date(time * 1000);
   const dateString = date.toLocaleDateString();
-  const timeString = date.toLocaleTimeString();
+  const timeString = date.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' });
   return `
-    <li>
+    <li style="--animation-delay: ${index * 0.1}s">
       <a href="${url}" target="_blank" rel="noopener noreferrer">${title}</a>
       <p class="author">by <strong>${author}</strong></p>
-      <p>on ${dateString} at ${timeString}</p>
+      <p class="date">on ${dateString} at ${timeString}</p>
     </li>
   `;
-};
+}
 
-// Function to load news items
-const loadNews = async () => {
+// Combined function to load news items and handle more news
+async function loadNews(isMore = false) {
   const newsDetails = await Promise.all(newsIds.slice(currentIndexNews, currentIndexNews + newsPerPage).map(fetchNewsDetails));
-  const newsContainer = document.querySelector('.news-list_container');
-  const newsList = newsContainer.querySelector('.news-list');
-  newsList.innerHTML += newsDetails.map(createNewsItem).join('');
+  if (isMore) {
+    const newsContainer = document.createElement('div');
+    newsContainer.classList.add('more-news-list_container');
+    const indexParagraph = document.createElement('p');
+    indexParagraph.classList.add('index');
+    const startIndex = currentIndexNews + 1;
+    const endIndex = Math.min(currentIndexNews + newsPerPage, newsIds.length);
+    indexParagraph.textContent = `${startIndex}-${endIndex} of ${newsIds.length}`;
+    newsContainer.appendChild(indexParagraph);
+    const newsList = document.createElement('ul');
+    newsList.innerHTML = newsDetails.map(createNewsItem).join('');
+    newsContainer.appendChild(newsList);
+    document.querySelector('.main').appendChild(newsContainer);
+  } else {
+    const newsContainer = document.querySelector('.news-list_container');
+    const newsList = newsContainer.querySelector('.news-list');
+    newsList.innerHTML += newsDetails.map(createNewsItem).join('');
+  }
   currentIndexNews += newsPerPage;
 
   // Update visibility of "more" and "less" buttons
-  document.querySelector('.more').style.display = currentIndexNews >= newsIds.length ? 'none' : 'block';
-  document.querySelector('.less').style.display = currentIndexNews > newsPerPage ? 'block' : 'none';
-};
+  updateButtonVisibility();
+}
 
-// Function to load more news items
-const loadMoreNews = async () => {
-  const newsDetails = await Promise.all(newsIds.slice(currentIndexNews, currentIndexNews + newsPerPage).map(fetchNewsDetails));
-  const newsContainer = document.createElement('div');
-  newsContainer.classList.add('more-news-list_container');
-  const indexParagraph = document.createElement('p');
-  indexParagraph.classList.add('index');
-  const startIndex = currentIndexNews + 1;
-  const endIndex = Math.min(currentIndexNews + newsPerPage, newsIds.length);
-  indexParagraph.textContent = `${startIndex}-${endIndex} of ${newsIds.length}`;
-  newsContainer.appendChild(indexParagraph);
-  const newsList = document.createElement('ul');
-  newsList.innerHTML = newsDetails.map(createNewsItem).join('');
-  newsContainer.appendChild(newsList);
-  document.querySelector('.main').appendChild(newsContainer);
+// Combined function to update button visibility
+function updateButtonVisibility() {
+  const moreButton = document.querySelector('.more');
+  const lessButton = document.querySelector('.less');
 
-  currentIndexNews += newsPerPage;
-
-  // Update visibility of "more" and "less" buttons
-  document.querySelector('.more').style.display = currentIndexNews >= newsIds.length ? 'none' : 'block';
-  document.querySelector('.less').style.display = 'block';
-};
+  moreButton.style.display = currentIndexNews >= newsIds.length ? 'none' : 'block';
+  lessButton.style.display = currentIndexNews > newsPerPage ? 'block' : 'none';
+}
 
 // Function to remove the last news list container
-const removeLastNewsList = () => {
+function removeLastNewsList() {
   const newsContainers = document.querySelectorAll('.more-news-list_container');
   if (newsContainers.length > 0) {
     newsContainers[newsContainers.length - 1].remove();
@@ -124,12 +106,11 @@ const removeLastNewsList = () => {
   }
 
   // Update visibility of "more" and "less" buttons
-  document.querySelector('.less').style.display = newsContainers.length <= 1 ? 'none' : 'block';
-  document.querySelector('.more').style.display = 'block';
-};
+  updateButtonVisibility();
+}
 
 // Event listeners for "more" and "less" buttons
-document.querySelector('.more').addEventListener('click', loadMoreNews);
+document.querySelector('.more').addEventListener('click', () => loadNews(true));
 document.querySelector('.less').addEventListener('click', removeLastNewsList);
 
 // Fetch initial data

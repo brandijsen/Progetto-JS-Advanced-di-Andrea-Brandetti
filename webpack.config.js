@@ -51,7 +51,7 @@ const config = {
                 use: {
                     loader: 'img-optimize-loader',
                     options: {
-                        compress: { mode: 'high' }
+                        compress: { mode: 'low' }
                     }
                 }
             },
