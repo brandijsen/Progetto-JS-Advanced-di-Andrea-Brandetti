@@ -206,7 +206,7 @@ footer {
 }
 */
 
-@media only screen and (max-width: 430px) {
+@media only screen and (max-width: 700px) {
   h1 {
     font-size: 2.5rem; /* 40px */
   }
@@ -222,7 +222,7 @@ footer {
   }
 
   .main {
-    margin: 0 0.25rem 1.875rem; /* 20px 30px */
+    margin: 0; /*0.25rem 1.875rem; /* 20px 30px */
   }
 
   h2 {
