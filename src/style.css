@@ -6,6 +6,7 @@ html {
 body {
   background-color: white;
   font-family: "Roboto", sans-serif;
+  margin: 0;
 }
 
 /* Header section */
@@ -29,7 +30,6 @@ h1 {
   font-weight: 600;
   color: white;
   padding: 0.625rem 6.25rem; /* 10px 100px */
-  text-align: justify;
   bottom: 0;
   left: 0;
   right: 0;
@@ -71,7 +71,6 @@ ul {
 
 /* List items */
 li {
-  padding: 0.3125rem; /* 5px */
   list-style: none;
   align-items: center;
 
@@ -166,7 +165,7 @@ button:hover {
 /* Footer section */
 footer {
   display: flex;
-  background-color: red;
+  background-color: black;
   color: white;
   justify-content: center;
   margin-top: 2.5rem; /* 40px */
