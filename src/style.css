@@ -166,7 +166,7 @@ button:hover {
 /* Footer section */
 footer {
   display: flex;
-  background-color: black;
+  background-color: red;
   color: white;
   justify-content: center;
   margin-top: 2.5rem; /* 40px */
@@ -175,38 +175,7 @@ footer {
   font-weight: bold;
 }
 
-/* Media Queries for Responsiveness */
-/*
-@media (max-width: 1200px) {
-  .main {
-    margin: 0 6.25rem 1.875rem;
-  }
-}
-*/
-
-/*
-@media (min-width: 481px) and (max-width: 768px) {
-  html {
-    font-size: 14px;
-  }
-
-  h1 {
-    font-size: 2.5rem; 
-  }
-
-  p.description {
-    padding: 0.625rem 3.125rem; 
-    font-size: 0.875rem; 
-  }
-
-  .main {
-    margin: 0 3.125rem 1.875rem;
-    background-color: blue;
-  }
-}
-*/
-
-@media only screen and (max-width: 700px) {
+@media only screen and (max-width: 480px) {
   h1 {
     font-size: 2.5rem; /* 40px */
   }
@@ -218,7 +187,7 @@ footer {
   p.description-short {
     display: block;
     padding: 0.625rem 1.25rem; /* 10px 20px */
-    font-size: 1.5rem; /* Further reduce font size */
+    font-size: 1.2rem; /* Further reduce font size */
   }
 
   .main {
@@ -241,6 +210,6 @@ footer {
   }
 
   footer {
-    font-size: 1.5rem;
+    font-size: 1.2rem;
   }
 }
