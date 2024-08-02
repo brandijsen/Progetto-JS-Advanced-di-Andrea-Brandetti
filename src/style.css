@@ -13,6 +13,8 @@ body {
 header {
   text-align: center;
   background-color: black;
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
 }
 
 /* Main title in header */
@@ -50,6 +52,8 @@ h1 {
 /* Main content section */
 .main {
   margin: 0 12.5rem 1.875rem; /* 200px 30px */
+  padding-left: 0.125px;
+  padding-right: 0.125px;
 }
 
 /* Subtitles in main section */
@@ -75,9 +79,10 @@ ul {
 li {
   list-style: none;
   align-items: center;
-
+  padding-left: 0.125rem;
+  padding-right: 0.125rem;
   margin-bottom: 0.625rem; /* 10px */
-  border: 1px solid white;
+  border: 2px solid white;
   opacity: 0;
   transform: translateY(1.25rem); /* 20px */
   animation: fadeInUp 0.5s forwards;
@@ -94,8 +99,7 @@ li {
 
 /* Hover effect for list items */
 li:hover {
-  border-left: 1px solid black;
-  border-bottom: 1px solid black;
+  border-left: 2px solid black;
 }
 
 /* Links */
@@ -188,7 +192,7 @@ footer {
 
   p.description-short {
     display: block;
-    padding: 0.625rem 1.25rem; /* 10px 20px */
+    padding: 0.625rem 1.9rem;
     font-size: 1.2rem; /* Further reduce font size */
   }
 
@@ -213,7 +217,7 @@ footer {
   }
 }
 
-@media only screen and (min-width: 481px) and (max-width: 960px) {
+@media only screen and (min-width: 481px) and (max-width: 1050px) {
   .main {
     margin: 0 6.25rem 1.875rem; /* 200px 30px */
   }
