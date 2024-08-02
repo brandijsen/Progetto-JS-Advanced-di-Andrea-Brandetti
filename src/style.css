@@ -213,7 +213,7 @@ footer {
   }
 }
 
-@media only screen and (min-width: 481) and (max-width: 960) {
+@media only screen and (min-width: 481px) and (max-width: 960px) {
   .main {
     margin: 0 6.25rem 1.875rem; /* 200px 30px */
   }
