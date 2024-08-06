@@ -5,10 +5,10 @@ import "./style.css";
 // API options for fetching new stories
 const newStoriesOptions = {
   method: 'GET',
-  url: `https://${process.env.RAPIDAPI_HOST}/newstories.json`,
+  url: `https://yc-hacker-news-official.p.rapidapi.com/newstories.json`,
   headers: {
     'x-rapidapi-key': process.env.RAPIDAPI_KEY,
-    'x-rapidapi-host': process.env.RAPIDAPI_HOST
+    'x-rapidapi-host': yc-hacker-news-official.p.rapidapi.com
   }
 };
 
@@ -17,7 +17,7 @@ async function fetchNewsDetails(id) {
   try {
     const response = await axios.request({
       method: 'GET',
-      url: `https://${process.env.RAPIDAPI_HOST}/item/${id}.json`,
+      url: `https://yc-hacker-news-official.p.rapidapi.com/item/${id}.json`,
       headers: newStoriesOptions.headers
     });
     return response.data;
