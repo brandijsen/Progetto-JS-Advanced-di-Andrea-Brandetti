@@ -35,6 +35,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
+  text-align: left;
 }
 
 .description-short {
@@ -45,6 +46,7 @@ h1 {
   bottom: 0;
   left: 0;
   right: 0;
+  text-align: left;
 }
 
 /* Main content section */
