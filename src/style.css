@@ -122,13 +122,11 @@ li .p {
 
 /* Author class for news items */
 p.author {
-  margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
 
 p.date {
   margin-bottom: 0rem;
-  margin-top: 0.5rem;
 }
 /* Button container */
 .btn-container {
