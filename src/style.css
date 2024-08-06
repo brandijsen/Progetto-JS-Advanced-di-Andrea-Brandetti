@@ -81,7 +81,7 @@ li {
   align-items: center;
   padding-left: 0.125rem;
   padding-right: 0.125rem;
-  margin-bottom: 0.625rem; /* 10px */
+  margin-bottom: 0.9rem;
   border: 2px solid white;
   opacity: 0;
   transform: translateY(1.25rem); /* 20px */
@@ -115,17 +115,14 @@ a:hover {
   text-decoration: underline;
 }
 
-li .p {
-  margin-bottom: 0.5rem;
-  padding: 0;
-}
-
 /* Author class for news items */
 p.author {
+  margin-bottom: 0.5rem;
   margin-top: 0.5rem;
 }
 
 p.date {
+  margin-top: 0.5rem;
   margin-bottom: 0rem;
 }
 /* Button container */
@@ -204,10 +201,6 @@ footer {
 
   .index {
     font-size: 1rem;
-  }
-
-  li {
-    margin-bottom: 0.7rem;
   }
 
   footer {
