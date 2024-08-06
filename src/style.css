@@ -81,7 +81,7 @@ li {
   align-items: center;
   padding-left: 0.125rem;
   padding-right: 0.125rem;
-  margin-bottom: 0.9rem;
+  margin-bottom: 1rem;
   border: 2px solid white;
   opacity: 0;
   transform: translateY(1.25rem); /* 20px */
@@ -117,12 +117,12 @@ a:hover {
 
 /* Author class for news items */
 p.author {
-  margin-bottom: 0.5rem;
-  margin-top: 0.5rem;
+  margin-bottom: 0.3rem;
+  margin-top: 0.3rem;
 }
 
 p.date {
-  margin-top: 0.5rem;
+  margin-top: 0.3rem;
   margin-bottom: 0rem;
 }
 /* Button container */
