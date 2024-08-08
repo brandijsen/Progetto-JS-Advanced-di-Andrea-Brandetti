@@ -1,5 +1,8 @@
 # TECHFEED
 
+<img src="./src/assets/images/readmePhoto1.jpg" alt="tech feed image 1" width="300" height="200"/>
+<img src="./src/assets/images/readmePhoto2.jpg" alt="tech feed image 2" width="300" height="200"/>
+
 ![TechFeed image 1](./src/assets/images/readmePhoto1.jpg)
 ![TechFeed image 2](./src/assets/images/readmePhoto2.jpg)
 
