@@ -3,7 +3,7 @@
 <img src="./src/assets/images/readmePhoto1.jpg" alt="tech feed image 1" width="200" height="300"/>
 <img src="./src/assets/images/readmePhoto2.jpg" alt="tech feed image 2" width="200" height="300"/>
 
-App to share tech related news. Created by Andrea Brandetti frontend developer using HackerNews API data.
+App to share tech related news. Developed by Andrea Brandetti frontend developer using HackerNews API data.
 
 How it works:
 

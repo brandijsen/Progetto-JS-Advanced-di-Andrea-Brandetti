@@ -8,7 +8,7 @@ const newStoriesOptions = {
   url: `https://yc-hacker-news-official.p.rapidapi.com/newstories.json`,
   headers: {
     'x-rapidapi-key': process.env.RAPIDAPI_KEY,
-    'x-rapidapi-host': yc-hacker-news-official.p.rapidapi.com
+    'x-rapidapi-host': 'yc-hacker-news-official.p.rapidapi.com'
   }
 };
 
