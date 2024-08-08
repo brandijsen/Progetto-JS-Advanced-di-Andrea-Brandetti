@@ -1,10 +1,7 @@
 # TECHFEED
 
-<img src="./src/assets/images/readmePhoto1.jpg" alt="tech feed image 1" width="300" height="200"/>
-<img src="./src/assets/images/readmePhoto2.jpg" alt="tech feed image 2" width="300" height="200"/>
-
-![TechFeed image 1](./src/assets/images/readmePhoto1.jpg)
-![TechFeed image 2](./src/assets/images/readmePhoto2.jpg)
+<img src="./src/assets/images/readmePhoto1.jpg" alt="tech feed image 1" width="200" height="300"/>
+<img src="./src/assets/images/readmePhoto2.jpg" alt="tech feed image 2" width="200" height="300"/>
 
 App to share tech related news. Created by Andrea Brandetti frontend developer using HackerNews API data.
 
