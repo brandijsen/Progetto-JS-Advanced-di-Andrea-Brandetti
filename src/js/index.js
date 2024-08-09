@@ -1,6 +1,6 @@
 import axios from 'axios';
 import _ from 'lodash';
-import "./style.css";
+import "../css/style.css";
 
 // API options for fetching new stories
 const newStoriesOptions = {
